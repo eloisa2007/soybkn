@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>muy bonito</title>
+</head>
+<script>
+
+function resizeImage(img) {
+  var px = img.style.width == "600px" ? "3000px" : "600px"
+  img.style.width = px;
+  img.style.height = px;
+}
+</script>
+<body>
+<figure id="image-box">
+<img src="IMG_4543.JPG" style="cursor: pointer;" class="image-slide" onclick="resizeImage(this)">
+
+<p style=float:right;color:brown>que nuestros primeros pasos no hayan sido en carne y hueso fue una <a href="te_perdiste(question_mark).html">pésima idea</a></p> 
+</body>
+</html>

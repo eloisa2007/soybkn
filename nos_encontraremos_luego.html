@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encontrémonos en nuestro lugar</title>
+</head>
+<body>
+    <style> 
+.slidecontainer {
+  width: 1000px;
+}
+
+.slider {
+  width: 1000px;
+
+}
+    </style>
+
+<script>
+    function onRangeChanged(value) {
+      let advertiseLink = document.getElementById('DisplaySliderResult');
+           let url = advertiseLink.href;
+           console.log(value);
+           value = parseInt(value);
+           switch(true) {
+             case value >= 0 && value <= 25:
+               url = "nunca_creímos_que_las_cosas_iban_a_terminar_tan_bien.html";
+               break;
+             case value > 25 && value <= 50: 
+               url= "ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ.html";
+               break;
+             case value > 50 && value <= 75: 
+               url= "tres_tristes_tigres.html";
+               break;
+             case value > 75 && value <= 100: 
+               url= "chiste_corto.html";
+               break;
+           }
+           advertiseLink.setAttribute('href', url);
+           console.log(advertiseLink);
+         }
+         function updateTextInput(val) {
+          document.getElementById('textInput').value=val; 
+        }
+</script>
+
+<p>cuando podamos entender <br> la distancia que hay entre nosotros</p>
+    <img src= "luego2.png" width="50%">
+
+<P>la distancia que hay entre nosotros: </p>
+
+ <center><div class="slidecontainer">
+     <form oninput="x.value=parseInt(tierslider.value)">
+     <input type='range' min='1' max='100' value='50' class= "slider" id='myRange' onchange="onRangeChanged(this.value);updateTextInput(this.value);"></form>
+</div></center>
+
+<a href='#' id='DisplaySliderResult'><input type="button" value="la distancia que hay entre nosotros"></a>
+<input type="text" id="textInput" value="">
+
+%
+
+</body>
+</html>

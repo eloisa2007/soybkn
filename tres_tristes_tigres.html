@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unión de pastrólogos</title>
+</head>
+<body>
+<div class="container" id="container">
+  <a href= "iguales.html"><img src="IMG_5171.jpg"></a></div>
+  <div class="bottom-right"><p>pero si quieres podemos <a href="qué_va_a_pasar.html"> jugar </a></p></div>
+  <div class="centered">
+    <p class="input-text-div ">
+      no podría bordear la <input onkeypress="clickPress(event)" type="text" id="input-text" size="20"> como solo tú lo sabes hacer
+    </p>
+    <a href= "the_new_gothic.html">
+      <button type="button">😿🙀😿🙀😿</button>
+    </a>
+  </div>
+</div>
+</body>
+
+<script>
+function clickPress(event) {
+    if (event.keyCode == 13) {
+      var input = document.getElementById('input-text');
+      if (input.value == '') {
+        return
+      }
+      createPhrase(input.value);
+      input.value = ''
+    }
+}
+
+function getRandomPosition(element,container) {
+	var x = container.offsetHeight-element.clientHeight;
+	var y = container.offsetWidth-element.clientWidth;
+	var randomX = Math.floor(Math.random()*x);
+	var randomY = Math.floor(Math.random()*y);
+	return [randomX,randomY];
+}
+
+function createPhrase(text) {
+  var div = document.createElement("div");
+  var container = document.getElementById('container');
+  div.setAttribute('class', 'phrase');
+  var xy = getRandomPosition(div, container);
+  console.log(xy);
+	div.style.top = xy[0] + 'px';
+	div.style.left = xy[1] + 'px';
+  div.innerHTML = text;
+
+  container.appendChild(div);
+}
+</script>
+
+<style>
+  .container {
+    position: absolute;
+    text-align: center;
+    color: rgb(25, 182, 20);
+  }
+
+  .phrase {
+    position: absolute;
+    background-color: white;
+    color: black;
+    z-index: 30;
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .bottom-right {
+    position: absolute;
+    bottom: -1650px;
+    right: -800px;
+  }
+
+  .input-text-div {
+    color: rgb(255, 255, 255);
+    font-size:20px;
+  }
+</style>
+</html>
